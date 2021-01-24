@@ -49,8 +49,7 @@ func main() {
 		} else {
 			fNumber, err := strconv.ParseFloat(line, byteFloat)
 			if err != nil {
-				fmt.Println("Type operand: ")
-				break
+				continue
 			} else {
 				operand1 = fNumber
 			}
@@ -71,8 +70,7 @@ func main() {
 			} else {
 				fNumber, err := strconv.ParseFloat(line, byteFloat)
 				if err != nil {
-					fmt.Println("Type operand: ")
-					break
+					continue
 				} else {
 					operand2 = fNumber
 				}
