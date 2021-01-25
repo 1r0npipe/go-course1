@@ -111,6 +111,8 @@ func Test_div (t *testing.T) {
 	for _, testCase := range testsTable {
 		result := div(testCase.gotA,testCase.gotB)
 		t.Logf ("The result is %.1f, and want: %.1f", result, testCase.want)
+		// I am aware that below condition is not quite correct for float numbers
+		// however used it for only learing process
 		if math.Floor(result * 100/100) != math.Floor(testCase.want*100/100) {
 			t.Errorf("The error occurs, got: %.1f, want: %.1f", result, testCase.want)
 		}
