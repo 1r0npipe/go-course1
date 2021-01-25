@@ -25,15 +25,11 @@ func mul(x,y float64) float64{
 }
 // to get div of two elements
 func div(x,y float64) float64{
-	if y == 0 {
-		fmt.Println("Division by zero!")
-		return 0
-	}
 	return x / y
 }
 
 func main() {
-	fmt.Println("this is simple calculator.")
+	fmt.Println("This is simple calculator.")
 	fmt.Print("Use x for Exit, any numbers are those operations:")
 	fmt.Println("'*' - multiplicaton, '/' - division, '+' and '-' between any two numbers")
 	var line string
@@ -83,6 +79,10 @@ func main() {
 			case '*':
 				fmt.Printf("Result = %.4f", mul(operand1,operand2))
 			case '/':
+				if operand2 == 0 {
+					fmt.Println("Division by zero!")
+					break
+				}
 				fmt.Printf("Result = %.4f", div(operand1,operand2))
 			}
 			fmt.Println("")
