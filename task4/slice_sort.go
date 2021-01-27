@@ -2,9 +2,9 @@ package main
 
 import "fmt"
 
-const n = 10
+
 //insert sort
-func insertSort(array [n]int) [n]int {
+func insertSortSlice(array []int) []int {
 	for i := 1; i < len(array); i++ {
 		j := i
 		for {
@@ -19,8 +19,8 @@ func insertSort(array [n]int) [n]int {
 	return array
 }
 
-func main() {
-	testArray := [n]int{4, 6, 5, 3, 6, 7, 4, 0, 9, 10}
-	
-	fmt.Println(insertSort(testArray))
+func sliceTask() {
+	testArray := []int{44, 6, 5, -3, 6, -7, 4, 0, 99, 10}
+	insertSortSlice(testArray)
+	fmt.Println(testArray)
 }
