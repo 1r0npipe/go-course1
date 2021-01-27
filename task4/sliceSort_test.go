@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func Test_insertSortSlice(t *testing.T) {
+func TestInsertSortSlice(t *testing.T) {
 	testsTable := []struct {
 		got  []int
 		want []int
@@ -14,8 +14,8 @@ func Test_insertSortSlice(t *testing.T) {
 			[]int{4, 6, 2, 8, 0, 3, 10, 56, 9, 1},
 			[]int{0, 1, 2, 3, 4, 6, 8, 9, 10, 56},
 		}, {
-			[]int{4, 6, 2, 8, 0, 3, 10, 56, 9, 1},
-			[]int{0, 1, 2, 3, 4, 6, 8, 9, 10, 56},
+			[]int{4, 6, 2, 8, 0, -3, -10, 54, 99, 1},
+			[]int{-10, -3, 0, 1, 2, 4, 6, 8, 54, 99},
 		},
 	}
 	for _, testCase := range testsTable {

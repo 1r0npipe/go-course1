@@ -2,7 +2,6 @@ package main
 
 import "fmt"
 
-
 //insert sort
 func insertSortSlice(array []int) []int {
 	for i := 1; i < len(array); i++ {
@@ -10,7 +9,7 @@ func insertSortSlice(array []int) []int {
 		for {
 			if j > 0 && array[j-1] > array[j] {
 				array[j-1], array[j] = array[j], array[j-1]
-				j-- 
+				j--
 			} else {
 				break
 			}
