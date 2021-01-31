@@ -29,6 +29,20 @@ func getFibonacciOptim(n uint32) uint32 {
 	return getFib(n)
 }
 
+func getFibcycle(n uint32) uint32 {
+	if n < 2 {
+		return n
+	}
+	if n == 2 { return 1 }
+	var i, f1, f2 uint32
+	f1 = 2
+	f2 = 3
+	for i = 3; i < n; i++ {
+		f1, f2 = f2, f1 + f2
+	}
+	return f1
+}
+
 func main() {
 	var inputLine string
 	fmt.Print("Please enter the N for Fibonacci sequience: ")
@@ -41,5 +55,6 @@ func main() {
 		os.Exit(1)
 	}
 	fmt.Printf("Your Fibonacci number is: %d\n", getFibonacci(num))
-	fmt.Printf("Your Optimazed Fibonacci number is: %d", getFibonacciOptim(num))
+	fmt.Printf("Your Optimazed Fibonacci number is: %d\n", getFibonacciOptim(num))
+	fmt.Printf("Your Fibonacci number by simple cycle is: %d\n", getFibcycle(num))
 }

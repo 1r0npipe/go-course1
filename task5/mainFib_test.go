@@ -18,7 +18,7 @@ func Test_getFibonacci(t *testing.T) {
 		}
 	}
 }
-func Test_getFibonacciOptim (t *testing.T) {
+func Test_getFibonacciOptim(t *testing.T) {
 	testsTable := []struct {
 		got  uint32
 		want uint32
@@ -34,14 +34,19 @@ func Test_getFibonacciOptim (t *testing.T) {
 		}
 	}
 }
-func Benchmark_getFibonacci (b *testing.B) {
+func Benchmark_getFibonacci(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		getFibonacci(uint32(i))
+		getFibonacci(uint32(20))
 	}
 }
-func Benchmark_getFibonacciOptim (b *testing.B) {
+func Benchmark_getFibonacciOptim(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		getFibonacciOptim(uint32(i))
+		getFibonacciOptim(uint32(20))
 	}
 }
 
+func Benchmark_getFibonacciCycle(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		getFibcycle(uint32(20))
+	}
+}
