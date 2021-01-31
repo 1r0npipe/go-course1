@@ -34,19 +34,91 @@ func Test_getFibonacciOptim(t *testing.T) {
 		}
 	}
 }
-func Benchmark_getFibonacci(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		getFibonacci(uint32(20))
-	}
-}
-func Benchmark_getFibonacciOptim(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		getFibonacciOptim(uint32(20))
+
+func Benchmark_getFibonacci10(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacci(10)
 	}
 }
 
-func Benchmark_getFibonacciCycle(b *testing.B) {
+func Benchmark_getFibonacciOptim10(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacciOptim(10)
+	}
+}
+
+func Benchmark_getFibonacciCycle10(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibcycle(10)
+	}
+}
+func Benchmark_getFibonacci20(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacci(20)
+	}	
+}
+
+func Benchmark_getFibonacciOptim20(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacciOptim(20)
+	}	
+}
+
+func Benchmark_getFibonacciCycle20(b *testing.B) {
 	for i := 0; i < b.N; i++ {
-		getFibcycle(uint32(20))
+		getFibcycle(20)
+	}
+}
+
+func Benchmark_getFibonacci30(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacci(30)
+	}	
+}
+
+func Benchmark_getFibonacciOptim30(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacciOptim(30)
+	}	
+}
+
+func Benchmark_getFibonacciCycle30(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		getFibcycle(30)
+	}
+}
+func Benchmark_getFibonacci40(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacci(40)
+	}	
+}
+
+func Benchmark_getFibonacciOptim40(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacciOptim(40)
+	}	
+}
+
+func Benchmark_getFibonacciCycle40(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		getFibcycle(40)
+	}
+}
+
+func Benchmark_getFibonacci50(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacci(50)
+	}	
+}
+
+func Benchmark_getFibonacciOptim50(b *testing.B) {
+	for i := 0; i < b.N; i++ {	
+		getFibonacciOptim(50)
+	}	
+}
+
+func Benchmark_getFibonacciCycle50(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		getFibcycle(50)
 	}
 }
