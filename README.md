@@ -1,3 +1,4 @@
 # go-course1
+ 
+Task 2 has been done
 
-Lesson 1 is ready to review
