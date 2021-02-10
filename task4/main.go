@@ -35,10 +35,10 @@ func bubbleSort(array [n]int) [n]int {
 
 func main() {
 	testArray := [n]int{4, 6, 5, 3, 6, 7, 4, 0, 9, 10}
-	testArray2 := [n]int{4, 6, 5, 3, 6, 7, 4, 0, 9, 10}
+	//testArray2 := [n]int{4, 6, 5, 3, 6, 7, 4, 0, 9, 10}
 
 	fmt.Println(insertSort(testArray))
 	sliceTask()
-	fmt.Println(bubbleSort(testArray2))
-	fizzbuzz()
+	//fmt.Println(bubbleSort(testArray2))
+	//fizzbuzz()
 }
