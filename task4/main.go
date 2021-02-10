@@ -39,5 +39,5 @@ func main() {
 
 	fmt.Println(insertSort(testArray))
 	sliceTask()
-	fmt.Println(bubleSort(testArray2))
+	fmt.Println(bubbleSort(testArray2))
 }
