@@ -40,4 +40,5 @@ func main() {
 	fmt.Println(insertSort(testArray))
 	sliceTask()
 	fmt.Println(bubbleSort(testArray2))
+	fizzbuzz()
 }
