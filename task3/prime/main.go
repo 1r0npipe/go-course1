@@ -7,7 +7,8 @@ import (
 
 func isPrime(a int) bool{
 	if a <= 2 { return true }
-	for j := 2; j <= int(math.Sqrt(float64(a))) ; j++ {
+	max := int(math.Sqrt(float64(a)))
+	for j := 2; j <= max ; j++ {
 		if a % j == 0 { 
 			return false
 		}

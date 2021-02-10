@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"os"
+
 	"strconv"
 	"strings"
 )
@@ -12,19 +12,22 @@ const byteFloat = 32
 const availableOperators = "*/+-"
 
 // to get sum of two elements
-func add(x,y float64) float64{
+func add(x, y float64) float64 {
 	return x + y
 }
+
 // to get sub to get sum of two elementsm of two elements
-func sub(x,y float64) float64{
+func sub(x, y float64) float64 {
 	return x - y
 }
+
 // to get mul of two elements
-func mul(x,y float64) float64{
+func mul(x, y float64) float64 {
 	return x * y
 }
+
 // to get div of two elements
-func div(x,y float64) float64{
+func div(x, y float64) float64 {
 	return x / y
 }
 
@@ -41,51 +44,45 @@ func main() {
 		fmt.Print("Type operand: ")
 		fmt.Scanf("%s", &line)
 		if line[0] == exitChar[0] {
-			os.Exit(0)
-		} else {
-			fNumber, err := strconv.ParseFloat(line, byteFloat)
-			if err != nil {
+			return
+		}
+		fNumber, err := strconv.ParseFloat(line, byteFloat)
+		if err != nil {
+			fmt.Println("The number is not correct, please re-enter")
+			continue
+		}
+		operand1 = fNumber
+		for {
+			fmt.Print("type operator: ")
+			fmt.Scanf("%s", &line)
+			if !(strings.Contains(availableOperators, line)) {
 				continue
 			} else {
-				operand1 = fNumber
+				operator = rune(line[0])
+				break
 			}
-			for {
-				fmt.Print("type operator: ")
-				fmt.Scanf("%s", &line)
-				if !(strings.Contains(availableOperators, line)) {
-					continue
-				} else {
-					operator = rune(line[0])
-					break
-				}
-			}
-			fmt.Print("Type operand: ")
-			fmt.Scanf("%s", &line)
-			if line[0] == exitChar[0] {
-				os.Exit(0)
-			} else {
-				fNumber, err := strconv.ParseFloat(line, byteFloat)
-				if err != nil {
-					continue
-				} else {
-					operand2 = fNumber
-				}
-			}
-			switch operator {
-			case '+':
-				fmt.Printf("Result = %.4f", add(operand1,operand2))
-			case '-':
-				fmt.Printf("Result = %.4f", sub(operand1,operand2))
-			case '*':
-				fmt.Printf("Result = %.4f", mul(operand1,operand2))
-			case '/':
-				if operand2 == 0 {
-					fmt.Println("Division by zero!")
-					break
-				}
-				fmt.Printf("Result = %.4f", div(operand1,operand2))
-			}
-			fmt.Println("")
 		}
+		fmt.Print("Type operand: ")
+		fmt.Scanf("%s", &line)
+		fNumber, err = strconv.ParseFloat(line, byteFloat)
+		if err != nil {
+			continue
+		}
+		operand2 = fNumber
+		switch operator {
+		case '+':
+			fmt.Printf("Result = %.4f", add(operand1, operand2))
+		case '-':
+			fmt.Printf("Result = %.4f", sub(operand1, operand2))
+		case '*':
+			fmt.Printf("Result = %.4f", mul(operand1, operand2))
+		case '/':
+			if operand2 == 0 {
+				fmt.Println("Division by zero!")
+				continue
+			}
+			fmt.Printf("Result = %.4f", div(operand1, operand2))
+		}
+		fmt.Println("")
 	}
 }
